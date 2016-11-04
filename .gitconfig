@@ -1,0 +1,7 @@
+[push]
+	default = simple
+[merge]
+	tool = myscript
+	conflictstyle = diff3
+[mergetool "myscript"]
+	cmd = ~/dev/linux-config/mergescript $BASE $LOCAL $REMOTE $MERGED
