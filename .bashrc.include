@@ -1,0 +1,9 @@
+# simplify git commands
+alias gl='git log --graph --decorate --oneline'
+alias gla='git log --graph --decorate --oneline --all'
+alias gwa='git worktree add'
+alias gwp='git worktree prune'
+
+# command line access to clipboard
+alias cbc='xclip -i -selection clipboard'
+alias cbp='xclip -o -selection clipboard'

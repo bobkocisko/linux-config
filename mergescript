@@ -1,0 +1,19 @@
+#!/bin/bash
+
+basepath=$1
+localpath=$2
+remotepath=$3
+mergedpath=$4
+
+echo $basepath
+echo $localpath
+echo $remotepath
+echo $mergedpath
+
+
+tmpdir="$(mktemp -d)"
+
+diff --unified=20000 "$basepath" "$localpath" > "$tmpdir/LOCAL"
+diff --unified=20000 "$basepath" "$remotepath" > "$tmpdir/REMOTE"
+
+vim -O "$tmpdir/LOCAL" "$mergedpath" "$tmpdir/REMOTE"
