@@ -5,3 +5,4 @@
 	conflictstyle = diff3
 [mergetool "myscript"]
 	cmd = ~/dev/linux-config/mergescript $BASE $LOCAL $REMOTE $MERGED
+	keepBackup = false
