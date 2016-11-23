@@ -1,0 +1,4 @@
+# custom CLion VM options
+
+-Xms512m
+-Xmx10000m
