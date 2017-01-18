@@ -31,3 +31,5 @@ nnoremap <C-l> <C-w>l
 " simplify moving buffer around
 nnoremap <C-u> <C-y>
 nnoremap <C-i> <C-e>
+
+nnoremap Y y$
