@@ -10,11 +10,14 @@ set wrap!         " turn off line wrapping by default
 
 " From https://dougblack.io/words/a-good-vimrc.html
 
-set relativenumber " show relative line numbers
-set showmatch      " highlight matching parenthesis or brace
-set hlsearch       " highlight search matches
-set scrolloff=3    " keep 3 lines above and below the cursor
-let mapleader=","  " leader is comma
+set relativenumber  " show relative line numbers
+set showmatch       " highlight matching parenthesis or brace
+set hlsearch        " highlight search matches
+set scrolloff=3     " keep 3 lines above and below the cursor
+set sidescroll=1    " sensible horizontal scrolling
+set sidescrolloff=3 " keep 3 characters to the sides of cursor
+set mouse=a         " mouse!
+let mapleader=","   " leader is comma
 
 " turn off search highlight with ,<space>
 nnoremap <leader><space> :nohlsearch<CR>
@@ -31,3 +34,5 @@ nnoremap <C-l> <C-w>l
 " simplify moving buffer around
 nnoremap <C-u> <C-y>
 nnoremap <C-i> <C-e>
+nnoremap <C-y> zh
+nnoremap <C-o> zl

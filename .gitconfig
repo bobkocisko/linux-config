@@ -8,3 +8,6 @@
 	keepBackup = false
 [core]
 	editor = vim
+[user]
+	name = Bob Kocisko
+	email = rkocisko@gmail.com
