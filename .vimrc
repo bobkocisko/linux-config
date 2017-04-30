@@ -36,3 +36,6 @@ nnoremap <C-u> <C-y>
 nnoremap <C-i> <C-e>
 nnoremap <C-y> zh
 nnoremap <C-o> zl
+
+" yank to end of line
+nnoremap Y y$
