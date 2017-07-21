@@ -12,3 +12,12 @@ alias cbp='xclip -o -selection clipboard'
 
 # enable developer scripts to know the location of CLion
 export CLION_INSTALL_DIR="${HOME}/installs/clion-2016.2.2"
+
+
+# creating .deb packages
+DEBEMAIL="rkocisko@gmail.com"
+DEBFULLNAME="Bob Kocisko"
+export DEBEMAIL DEBFULLNAME
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+complete -F _quilt_completion -o filenames dquilt
+
