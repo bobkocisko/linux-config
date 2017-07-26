@@ -39,3 +39,6 @@ nnoremap <C-o> zl
 
 " yank to end of line
 nnoremap Y y$
+
+" Toggle software caps lock
+imap <C-t> <Plug>CapsLockToggle
