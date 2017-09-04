@@ -6,7 +6,7 @@ filetype plugin indent on
 
 " My own preferences
 
-set wrap!         " turn off line wrapping by default
+set nowrap         " turn off line wrapping by default
 
 " From https://dougblack.io/words/a-good-vimrc.html
 
@@ -32,13 +32,24 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " simplify moving buffer around
-nnoremap <C-u> <C-y>
-nnoremap <C-i> <C-e>
-nnoremap <C-y> zh
-nnoremap <C-o> zl
+" (leave <C-o> and <C-i> for jumping forward and backward)
+" Down <C-y>
+nnoremap <C-u> <C-e>
+" Right zl
+" Left zh
 
 " yank to end of line
 nnoremap Y y$
 
 " Toggle software caps lock
 imap <C-t> <Plug>CapsLockToggle
+
+" NerdComment preferences
+let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
+let g:NERDCompactSexyComs = 1 " Use compact syntax for prettified multi-line comments
+let g:NERDDefaultAlign = 'left' " Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDCommentEmptyLines = 1 " Allow commenting and inverting empty lines (useful when commenting a region)
+
+" Allow navigating past end of line
+set virtualedit=all
+
