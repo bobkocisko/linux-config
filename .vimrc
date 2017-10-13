@@ -113,6 +113,12 @@ set virtualedit=all
 
 let g:ctrlp_switch_buffer = 'Et' 
 
+function! s:DoubletFun(prefix)
+  execute "tabedit " . "include/" . a:prefix . ".h"
+  execute "vsp " . "src/" . a:prefix . ".cpp"
+endfunction
+command! -nargs=1 Doublet call s:DoubletFun(<f-args>)
+
 function! s:TripletFun(prefix)
   execute "tabedit " . "include/" . a:prefix . ".h"
   execute "vsp " . "src/" . a:prefix . "Impl.cpp"
