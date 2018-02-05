@@ -35,3 +35,6 @@ complete -F _quilt_completion -o filenames dquilt
 # bash command cheat sheet
 alias cs="less ${DIR}/readline-emacs-editing-mode-cheat-sheet.txt"
 
+# psql: edit in vim and page in vim readonly
+alias psqp='EDITOR="vim" PAGER="vim -R -" psql'
+

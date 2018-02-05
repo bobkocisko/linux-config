@@ -37,9 +37,8 @@ Plugin 'tpope/vim-repeat' " Enable '.' to work with plugin mapped commands
 
 Plugin 'tpope/vim-sleuth' " Figure out tab spacing automatically
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate' " Snippets support
+Plugin 'ervandew/supertab' " Allow YouCompleteMe and UltiSnips to work together with the tab key
+Plugin 'SirVer/ultisnips' "Snippets management
 Plugin 'honza/vim-snippets'  " Specific snippets
 
 Plugin 'tpope/vim-surround' " Change surrounding characters (eg double quote to single quote or xml tags)
@@ -94,8 +93,23 @@ nnoremap <C-u> <C-e>
 " yank to end of line
 nnoremap Y y$
 
+" Faster macro recording and playback
+nmap <F2> qq
+nmap <F3> q
+nmap <F4> @q
+
 " Toggle software caps lock
 imap <C-t> <Plug>CapsLockToggle
+
+" YouCompleteMe and UltiSnips compatibility, with the helper of supertab
+" (via http://stackoverflow.com/a/22253548/1626737)
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " NerdComment preferences
 let g:NERDSpaceDelims = 1 " Add spaces after comment delimiters by default
@@ -131,5 +145,16 @@ command! -nargs=1 Triplet call s:TripletFun(<f-args>)
 let g:lasttab = 1
 nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" Close current tab and move to previous
+function! s:CloseTabMovePrevious()
+  execute "tabclose"
+  execute "tabprevious"
+endfunction
+command! Ctp call s:CloseTabMovePrevious()
+nnoremap <C-x> :Ctp<CR>
+
+" psql integration
+au BufRead /tmp/psql.edit.* set syntax=sql
 
 source ~/.vimrc-local
