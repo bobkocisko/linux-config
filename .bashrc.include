@@ -22,7 +22,7 @@ alias cbc='xclip -i -selection clipboard'
 alias cbp='xclip -o -selection clipboard'
 
 # enable developer scripts to know the location of CLion
-export CLION_INSTALL_DIR="${HOME}/installs/clion-2016.2.2"
+export CLION_INSTALL_DIR="${HOME}/installs/clion-2018.2.1"
 
 
 # creating .deb packages
